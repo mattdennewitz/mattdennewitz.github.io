@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+<p class="meta">
+    {{ page.date | date: "%B %d, %Y" }}
+</p>
+
+<summary>
+    <p>{{ page.summary }}</p>
+</summary>
+
+<article>
+    <main>
+        {{ content }}
+    </main>
+</article>

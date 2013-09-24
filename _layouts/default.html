@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <script type="text/javascript" src="//use.typekit.net/gst5ydr.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css" />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css" />
+
+        <style>
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            </div>
+            <div class="container contact">
+                <code>{</code>
+                <a href="http://pitchfork.com/">Pitchfork</a>,
+                <a href="http://beergraphs.com/">BeerGraphs</a>,
+                <a href="https://github.com/mattdennewitz">Github</a>,
+                <a href="https://twitter.com/yourusername">Twitter</a>
+                <code>}</code>
+            </div>
+        </header>
+
+        <div class="container">
+            {{ content }}
+        </div>
+
+        <footer>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
