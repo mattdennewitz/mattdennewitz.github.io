@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Why A Blog?"
+date:   2013-09-25 09:00:00
+---
+
+Public speaking is pretty nerve-wracking for me.
+I figure that a good way to go about fixing this is to
+start a blog and keep its posts and source on Github.
+In-progress posts, warts, and all the rest.
+
+But, enough about me. Let's get started.
