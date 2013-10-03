@@ -23,7 +23,7 @@ like &#8220;`albumreviews/1/cover.jpg`&#8221; &mdash;
 and return the corresponding node. Unless we add or subtract from the ring,
 the lookup function is idempotent.
 
-I haven't explained how nodes are placed into the ring,
+I realize that I haven't explained how nodes are placed into the ring,
 or how nodes are looked up. For a thorough explanation
 of consistent hashing and the concept of a hash ring, check out
 [this](http://michaelnielsen.org/blog/consistent-hashing/)
@@ -32,20 +32,15 @@ and [this](http://www.martinbroadhurst.com/Consistent-Hash-Ring.html).
 ### How do I use this thing?
 
 To use, import `hash_ring` and create an instance of its `HashRing` class.
-You can provide nodes at the ring's creation, or you can add them later
-via `HashRing.add_node`.
+Nodes can be provided at creation via the `nodes` kwarg:
 
 {% highlight python %}
 import hash_ring
 
-nodes = ['cdn.example.com', 'cdn2.example.com',
-         'cdn3.example.com']
+nodes = ['cdn.pitchfork.com', 'cdn2.pitchfork.com', 'cdn3.pitchfork.com']
 
 # create the hash ring with our cdn domains
 ring = hash_ring.HashRing(nodes=nodes)
-
-# oops, forgot one. add it.
-ring.add_node('cdn4.example.com')
 {% endhighlight %}
 
 This class's default settings will create five &#8220;replicas&#8221; for each node
@@ -58,20 +53,56 @@ with the `replicas` kwarg:
 ring = hash_ring.HashRing(replicas=10, nodes=nodes)
 {% endhighlight %}
 
+Nodes can also be added and removed during the life of the ring:
+
+{% highlight python %}
+# add 'cdn4'
+ring.add_node('cdn4.pitchfork.com')
+
+# remove 'cdn2'
+ring.remove_node('cdn2.pitchfork.com')
+{% endhighlight %}
+
 Now that we've populated our hash ring, we can use it to look up
 a domain for a specific asset:
 
 {% highlight python %}
 # find the CDN domain for a given file path
 fn = 'albumreviews/1/cover.jpg'
-cdn_endpoint = ring.lookup(fn)
+cdn_domain = ring.lookup(fn)
 {% endhighlight %}
 
-`cdn_endpoint` will be one of the CDN domains in the ring.
-I can glue together the result and my file path to produce
-a URL I can use. Doing this for all assets on my page
+`cdn_domain` will be one of the CDN domains in the ring.
+The domain name and file path can be glued together to form
+the asset's CDN URL. Doing this for all assets on my page
 ensures that they're distributed across several domains,
 thus achieving higher parallelization of asset downloads.
+
+### Implementation
+
+Here's a simple implementation to illustrate the entire process:
+
+{% highlight pycon %}
+>>> import urlparse
+>>> import hash_ring
+
+# create hash ring for cdn domains
+>>> nodes = ['cdn.pitchfork.com',  'cdn2.pitchfork.com',
+...          'cdn3.pitchfork.com', 'cdn4.pitchfork.com']
+>>> ring = hash_ring.HashRing(nodes=nodes)
+
+>>> def cdn_url(path):
+>>>    return urlparse.urljoin(ring.lookup(path), path)
+
+>>> cdn_url('albumreviews/1/header.jpg')
+'cdn.pitchfork.com'
+
+>>> cdn_url('albumreviews/10000/header.jpg')
+'cdn2.pitchfork.com'
+{% endhighlight %}
+
+Register `cdn_url` with your template system, and you'll have your
+asset URLs automatically hashed to maximize parallel downloads.
 
 <code class="blip">&#35;</code>
 

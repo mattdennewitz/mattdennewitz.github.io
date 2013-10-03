@@ -1,5 +1,6 @@
 ---
 layout: post
+disallow_comments: true
 ---
 
 I'm Matt. I live in Chicago where I head up an otherwise

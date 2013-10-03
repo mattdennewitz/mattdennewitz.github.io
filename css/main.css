@@ -60,6 +60,11 @@ article {
     font-family: "kepler-std";
 }
 
+article h3 {
+    font-weight: 900;
+    margin-top: 48px;
+}
+
 article p {
     font-size: 17px;
     text-indent: 32px;
@@ -86,14 +91,20 @@ article pre, article code {
 
 .highlight {
     background: transparent;
-    border-top: solid 2px #eee;
-    border-bottom: solid 2px #eee;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+    margin: 1em 0 2em 0;
 }
 
 code.blip {
     color: #ddd;
     display: block;
     text-align: center;
+}
+
+/* hack to remove text-indent */
+p code.blip {
+    margin-left: -32px;
 }
 
 summary {
