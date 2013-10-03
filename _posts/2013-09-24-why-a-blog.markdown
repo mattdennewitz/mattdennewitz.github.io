@@ -2,6 +2,7 @@
 layout: post
 title:  "Why A Blog?"
 date:   2013-09-25 09:00:00
+disallow_comments: true
 ---
 
 Public speaking is pretty nerve-wracking for me.

@@ -19,7 +19,7 @@ layout: default
         {{ content }}
     </article>
 
-    {% if page.disallow_comments == true %} 
+    {% if page.disallow_comments != true %} 
         <section id="comments">
             <h4>Comments</h4>
             <div id="disqus_thread"></div>
