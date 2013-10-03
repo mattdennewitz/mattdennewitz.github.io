@@ -36,10 +36,6 @@ header h1 {
     text-transform: uppercase;
 }
 
-header .contact {
-    font-size: 11px;
-}
-
 header a {
     text-decoration: none;
 }
@@ -113,9 +109,22 @@ summary {
 }
 
 footer {
-    font-size: 12px;
+    font-size: 14px;
     margin: 48px 0;
     text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer li {
+    display: inline-block;
+    font-size: 12px;
+    margin: 8px 4px;
 }
 
 footer a {
@@ -124,6 +133,10 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+footer i {
+    font-size: 14px;
 }
 
 #home h2 {

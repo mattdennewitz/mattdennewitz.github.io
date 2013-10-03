@@ -4,10 +4,12 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-        <title>{{ page.title|strip_html }}</title>
+        <title>{{ page.title|strip_html }} - {{ site.name }}</title>
 
         <script type="text/javascript" src="//use.typekit.net/gst5ydr.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml" />
 
         <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="/css/syntax.css" />
@@ -18,8 +20,9 @@
             <div class="container">
                 <h1 class="title"><a href="/">{{ site.name }}</a></h1>
 
-                <a href="/"><i class="icon-home"></i></a>
-            </div>
+                <a title="Home" href="/"><i class="icon-home"></i></a>&nbsp;&nbsp;
+                <a title="RSS feed" href="/feed.xml"><i class="icon-rss"></i></a>
+             </div>
         </header>
 
         <div class="container">
@@ -30,13 +33,23 @@
             <code class="blip">&#35;</code>
 
             <div class="container contact">
-                <a href="/about.html">About</a><br />
-                <a href="http://pitchfork.com/">Pitchfork</a>,
-                <a href="http://beergraphs.com/">BeerGraphs</a><br />
-                <a href="https://github.com/mattdennewitz">GitHub</a>,
-                <a href="https://instagram.com/mattdennewitz">Instagram</a>,
-                <a href="https://twitter.com/mattdennewitz">Twitter</a>,
-                <a href="http://mattdennewitz.com/">Tumblr</a><br />
+                <ul>
+                    <li><a title="Home" href="/">Home</a></li>
+                    <li><a title="About" href="/about.html">About</a></li>
+                    <li><a title="RSS feed" href="/feed.xml">RSS</a></li>
+                </ul>
+
+                <ul>
+                    <li><a target="_blank" href="http://pitchfork.com/">Pitchfork</a></li>
+                    <li><a target="_blank" href="http://beergraphs.com/">BeerGraphs</a></li>
+                </ul>
+
+                <ul>
+                    <li><a target="_blank" href="https://github.com/mattdennewitz"><i class="icon-github-alt"></i></a></li>
+                    <li><a target="_blank" href="https://instagram.com/mattdennewitz"><i class="icon-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://twitter.com/mattdennewitz"><i class="icon-twitter"></i></a></li>
+                    <li><a target="_blank" href="http://mattdennewitz.com/"><i class="icon-tumblr"></i></a></li>
+                </ul>
             </div>
         </footer>
 
