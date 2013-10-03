@@ -2,6 +2,7 @@
 layout: post
 title: Minimizing page load times with <code>hash-ring-ctypes</code>, a fast Python hash ring
 hp_title: Minimizing page load times with <code>hash-ring-ctypes</code>
+summary: Using <code><a href="https://github.com/mattdennewitz/hash-ring-ctypes/">hash-ring-ctypes</a></code> to parallelize asset loading.
 date: 2013-10-02 09:00:00
 ---
 

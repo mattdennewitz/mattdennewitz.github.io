@@ -120,7 +120,8 @@ p code.blip {
     margin-left: -32px;
 }
 
-summary {
+article summary {
+    font-family: "jaf-facitweb";
     font-weight: 100;
     margin: 48px 0;
 }
@@ -160,6 +161,12 @@ footer i {
     font-size: 16px;
 }
 
+#home summary {
+    color: #888;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
 #home ul {
     list-style: none;
     padding: 0;
@@ -167,11 +174,12 @@ footer i {
 }
 
 #home li {
-    margin: 24px 0;
+    margin: 24px 0 48px;
 }
 
-#home a {
-    font-size: 16px;
+#home a.title {
+    display: block;
+    margin: 12px 0;
 }
 
 #home span {

@@ -7,13 +7,20 @@ title: Singletons going steady
     <ul class="posts">
         {% for post in site.posts %}
             <li>
-                <a href="{{ post.url }}">
+                <a class="title" href="{{ post.url }}">
                     {% if post.hp_title %}
                         {{ post.hp_title }}
                     {% else %}
                         {{ post.title }}
                     {% endif %}
                 </a>
+
+                {% if post.summary %}
+                    <summary>
+                        {{ post.summary }}
+                    </summary>
+                {% endif %}
+
                 <span>{{ post.date | date: "%b %d, %Y" }}</span>
             </li>
         {% endfor %}

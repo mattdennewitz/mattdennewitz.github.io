@@ -8,14 +8,14 @@ layout: default
     {{ page.date | date: "%B %d, %Y" }}
 </p>
 
-{% if page.summary %}
-    <summary>
-        <p>{{ page.summary }}</p>
-    </summary>
-{% endif %}
-
 <main>
     <article>
+        {% if page.summary %}
+            <summary>
+                <p>{{ page.summary }}</p>
+            </summary>
+        {% endif %}
+
         {{ content }}
     </article>
 
