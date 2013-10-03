@@ -33,7 +33,7 @@ and [this](http://www.martinbroadhurst.com/Consistent-Hash-Ring.html).
 
 For now, install from GitHub via `pip`:
 
-{% highlight shell %}
+{% highlight bash %}
 $ pip install -e git+https://github.com/mattdennewitz/hash-ring-ctypes#egg=hash_ring
 {% endhighlight %}
 

@@ -99,6 +99,8 @@ article pre, article code {
     border-top: solid 1px #ddd;
     border-bottom: solid 1px #ddd;
     margin: 1em 0 2em 0;
+    overflow-x: scroll;
+    max-width: 600px;
 }
 
 @media (max-width: 600px) {
