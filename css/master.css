@@ -81,8 +81,17 @@ article pre, article code {
 }
 
 .container {
+    transition: width 150s;
+    -webkit-transition: width 150s;
+
     margin: 0 auto;
-    width: 600px;
+    max-width: 600px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 5%;
+    }
 }
 
 .highlight {
@@ -90,6 +99,12 @@ article pre, article code {
     border-top: solid 1px #ddd;
     border-bottom: solid 1px #ddd;
     margin: 1em 0 2em 0;
+}
+
+@media (max-width: 600px) {
+    .highlight {
+        overflow-x: scroll;
+    }
 }
 
 code.blip {
