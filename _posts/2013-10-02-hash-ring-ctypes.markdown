@@ -31,6 +31,12 @@ and [this](http://www.martinbroadhurst.com/Consistent-Hash-Ring.html).
 
 ### How do I use this thing?
 
+For now, install from GitHub via `pip`:
+
+{% highlight shell %}
+$ pip install -e git+https://github.com/mattdennewitz/hash-ring-ctypes#egg=hash_ring
+{% endhighlight %}
+
 To use, import `hash_ring` and create an instance of its `HashRing` class.
 Nodes can be provided at creation via the `nodes` kwarg:
 
