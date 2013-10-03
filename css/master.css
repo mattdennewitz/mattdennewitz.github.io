@@ -70,6 +70,28 @@ article li {
     margin: 8px 0;
 }
 
+#social {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#social li {
+    display: inline-block;
+    height: 20px;
+    width: 100px;
+}
+
+#social iframe {
+    height: 20px !important;
+    overflow: hidden;
+}
+
+#social li.tw {
+    width: 100px;
+}
+
 pre, code {
     font-family: "Fira Mono", "inconsolata", "Menlo";
 }

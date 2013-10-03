@@ -2,11 +2,23 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-
 <p class="meta">
     {{ page.date | date: "%B %d, %Y" }}
 </p>
+
+<h1>{{ page.title }}</h1>
+
+<ul id="social">
+    <li class="tw">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="mattdennewitz" data-dnt="true">Tweet</a>
+    </li>
+    <li>
+        <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-width="150" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+    </li>
+    <li>
+        <div class="g-plusone" data-size="medium"></div>
+    </li>
+</ul> 
 
 <main>
     <article>
@@ -36,3 +48,5 @@ layout: default
         </section>
     {% endif %}
 </main>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
