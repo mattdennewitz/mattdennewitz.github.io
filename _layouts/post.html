@@ -3,50 +3,53 @@ layout: default
 ---
 
 <p class="meta">
-    {{ page.date | date: "%B %d, %Y" }}
+  {{ page.date | date: "%B %d, %Y" }}
 </p>
 
 <h1>{{ page.title }}</h1>
 
 <ul id="social">
-    <li class="tw">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="mattdennewitz" data-dnt="true">Tweet</a>
-    </li>
-    <li>
-        <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-width="150" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
-    </li>
-    <li>
-        <div class="g-plusone" data-size="medium"></div>
-    </li>
+  <li class="tw">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="mattdennewitz" data-dnt="true">Tweet</a>
+  </li>
+  <li>
+    <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-width="150" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+  </li>
+  <li>
+    <div class="g-plusone" data-size="medium"></div>
+  </li>
+  <li>
+    <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
+  </li>
 </ul> 
 
 <main>
-    <article>
-        {% if page.summary %}
-            <summary>
-                <p>{{ page.summary }}</p>
-            </summary>
-        {% endif %}
-
-        {{ content }}
-    </article>
-
-    {% if page.disallow_comments != true %} 
-        <section id="comments">
-            <h4>Comments</h4>
-            <div id="disqus_thread"></div>
-            <script type="text/javascript">
-                var disqus_shortname = 'singletons';
-                (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </section>
+  <article>
+    {% if page.summary %}
+    <summary>
+      <p>{{ page.summary }}</p>
+    </summary>
     {% endif %}
+
+    {{ content }}
+  </article>
+
+  {% if page.disallow_comments != true %} 
+  <section id="comments">
+    <h4>Comments</h4>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+     var disqus_shortname = 'singletons';
+     (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  {% endif %}
 </main>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
