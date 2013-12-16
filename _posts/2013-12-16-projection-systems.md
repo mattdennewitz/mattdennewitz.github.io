@@ -40,4 +40,6 @@ less troublesome.
    can afford or can afford to care about. Failing that, please include as many peripherals
    (team, age, bats, throws) as possible. Matching using only these data points is not ideal,
    but their availability goes a long way toward disambiguation.
+   These peripherals are also what could be used in the case where
+   a player does not have a database from any major source.
 
