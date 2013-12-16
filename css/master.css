@@ -63,7 +63,7 @@ article h3 {
 
 article p {
     font-size: 17px;
-    text-indent: 32px;
+    text-indent: 24px;
 }
 
 article p:first-of-type {
@@ -72,6 +72,11 @@ article p:first-of-type {
 
 article li {
     margin: 8px 0;
+}
+
+article li p:first-of-type {
+    margin-top: 8px;
+    text-indent: 0;
 }
 
 #social {
