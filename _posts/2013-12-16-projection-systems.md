@@ -43,3 +43,9 @@ less troublesome.
    These peripherals are also what could be used in the case where
    a player does not have a database from any major source.
 
+#### Bonus request
+
+**Split player names into first and last names.**
+
+First and last names are always useful, especially when disambiguating without an ID.
+Please consider splitting names if possible.
